@@ -1,2 +1,9 @@
 <h1>Cats#new</h1>
 <p>Find me in app/views/cats/new.html.erb</p>
+<h3>Create a Cat</h3>
+<%= form_with model: @cat do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+  <%= form.text_field :motto, placeholder: "motto" %>
+
+  <%= form.submit %>
+<% end %>
