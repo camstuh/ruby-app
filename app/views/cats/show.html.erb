@@ -1,5 +1,50 @@
-<h1>Cats#show</h1>
-<p>Find me in app/views/cats/show.html.erb</p>
-<h1><%= @cat.name %></h1>
-<h4>"<%= @cat.motto %>"</h4>
+<head>
+<style>
+body {
+    font-family: tahoma;
+}
+h1 {
+    color: #54c2d6;
+}
+p {
+    color: grey;    
+}
+.rmv{
+    width: 100px;
+    border-radius: 8px;
+    margin: 10px 0px;
+}
+a {
+    text-decoration: none;  
+    color: #e175f9;
+    text-align: center;
+}
+
+h3{
+    margin-top: 5px;
+}
+
+.main{
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px dotted #d4d4d4;
+    width: 400px;
+    text-align: left;
+}
+</style>
+</head>
+<div class="home">
+<a href="http://localhost:3000/cats/"> < Back to Home</a>
+</div>
+
+<h1>Adopt Me</h1>
+<p>I want to live in nice home and eat yummy food</p>
+<div class="main">
+<h3>Name: <%= @cat.name %></h2>
+<img src="https://data.whicdn.com/images/61449634/large.jpg">
+<h4>My Motto: "<%= @cat.motto %>"</h4>
+<div class="rmv">
 <%= link_to 'Remove', @cat, method: :delete, data: { confirm: 'Are you sure?'} %>
+</div>
+</div>
+
