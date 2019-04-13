@@ -1,23 +1,37 @@
 <head>
 <style>
 body {
-    font-family: tahoma;
+    font-family: gotham;
 }
 h1 {
-    color: #54c2d6;
+    color: #211382;
 }
 p {
-    color: grey;    
+    color: grey;
+    font-size: 14px;
+    margin: 10px; 
 }
 .rmv{
-    width: 100px;
-    border-radius: 8px;
+    width: 150px;
+    /* height: 2px; */
+    border-radius: 6px;
     margin: 10px 0px;
+    background-color: #c9b5f7;
+    padding: 6px;
+    text-align: center;
+    font-size: 14px;
 }
 a {
     text-decoration: none;  
-    color: #e175f9;
+    color: #403e3e;
     text-align: center;
+}
+.home{
+    font-size:12px;
+}
+
+img {
+    width:  250px;
 }
 
 h3{
@@ -38,11 +52,20 @@ h3{
 </div>
 
 <h1>Adopt Me</h1>
-<p>I want to live in nice home and eat yummy food</p>
+<p>I want to live in a nice home and eat yummy food</p>
 <div class="main">
 <h3>Name: <%= @cat.name %></h2>
-<img src="https://data.whicdn.com/images/61449634/large.jpg">
-<h4>My Motto: "<%= @cat.motto %>"</h4>
+<p>My Motto: "<%= @cat.motto %>"</p>
+<p>Weight: "<%= @cat.weight %>"</p>
+<p>Age: "<%= @cat.age %>"</p>
+<p>Fur: "<%= @cat.fur %>"</p>
+<% if @cat.avatar.attached? %>
+    <image src="<%=(url_for(@cat.avatar))%>">
+<% end %>
+<div class="rmv">
+   <%= link_to "Edit", edit_cat_path(@cat)  %>
+</div>
+
 <div class="rmv">
 <%= link_to 'Remove', @cat, method: :delete, data: { confirm: 'Are you sure?'} %>
 </div>

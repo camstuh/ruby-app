@@ -24,6 +24,10 @@ class CatsController < ApplicationController
   end
 
   def update
+    if @cat.avatar.attached?
+      @cat.avatar.purge()
+    end
+    @cat.avatar.attach(params[:avatar])
     @cat.update(cat_params)
 
     redirect_to cat_path(@cat)
@@ -38,7 +42,7 @@ class CatsController < ApplicationController
   private
 
   def cat_params
-    params.require(:cat).permit(:name, :motto)
+    params.require(:cat).permit(:name, :motto, :age, :weight, :fur, :avatar)
   end
 
   def current_cat

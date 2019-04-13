@@ -1,9 +1,45 @@
-<h1>Cats#new</h1>
-<p>Find me in app/views/cats/new.html.erb</p>
-<h3>Create a Cat</h3>
+<head>
+<style>
+body {
+    font-family: gotham;
+}
+h1 {
+    color: #211382;
+}
+p {
+    color: grey;
+    font-size: 14px;
+    margin: 10px; 
+}
+
+a {
+    text-decoration: none;  
+    color: #403e3e;
+    text-align: center;
+}
+
+.home{
+    font-size:12px;
+}
+</style>
+</head>
+
+<div class="home">
+<a href="http://localhost:3000/cats/"> < Back to Home</a>
+</div>
+
+<h1>Register a New Cat</h1>
+<p>We will help you place your cat in a loving home with yummy food.</p>
+<h3>Register a Cat</h3>
 <%= form_with model: @cat do |form| %>
   <%= form.text_field :name, placeholder: "name" %>
   <%= form.text_field :motto, placeholder: "motto" %>
+  <%= form.text_field :weight, placeholder: "weight" %>
+  <%= form.text_field :age, placeholder: "age" %>
+  <%= form.text_field :fur, placeholder: "fur color" %>
+
+  <%= form.label "Profile Photo"%>
+  <%= form.file_field :avatar %>
 
   <%= form.submit %>
 <% end %>

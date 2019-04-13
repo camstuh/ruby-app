@@ -1,8 +1,49 @@
-<h1>Cats#index</h1>
-<p>Find me in app/views/cats/index.html.erb</p>
+<style>
+body {
+    font-family: gotham;
+}
+h1 {
+    color: #cc1cb3;
+}
+p {
+    color: grey;
+    font-size: 14px;
+    margin: 10px; 
+}
+.btn{
+    width: 150px;
+    /* height: 2px; */
+    border-radius: 6px;
+    margin: 10px 0px;
+    background-color: #35323e;
+    padding: 6px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+a {
+    text-decoration: none;  
+    text-align: center;
+}
+.home{
+    font-size:12px;
+}
+
+</style>
+</head>
+
+
+<h1>Cat Adoption Agency</h1>
+<p>Welcome to Camstar's Cat Adoption Agency. Find the perfect cat for you!</p>
 
 <ul>
   <% @cats.each do |cat| %>
-    <li><%= link_to cat.motto, cat_path(cat)  %></li>
+    <li><%= link_to cat.name, cat_path(cat)  %></li>
   <% end %>
 </ul>
+
+<a href="http://localhost:3000/cats/new/"> <div class="btn">
+Register a Cat
+</div></a>
+
+
